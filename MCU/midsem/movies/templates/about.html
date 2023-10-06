@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>my movie</title>
+    <link rel="icon" href="{% static '/images/4.png' %}" />
+    <style type="text/css">
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+      .header {
+        height: 80px;
+        background-color: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: normal;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        padding: 10px 8%;
+      }
+      /*nav ul{
+    text-align:center;
+}*/
+      nav ul li {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0 20px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: rgb(227, 239, 239);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Marvel Movie Dashboard</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home'%}">Back</a></li>
+          <li><a href="{% url 'main'%}">Movies</a></li>
+          <li><a href="{% url 'logins'%}">Log out</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+    <br><br><br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, distinctio delectus! Nobis, modi magnam ducimus quidem vitae neque, quos quisquam voluptas illum, voluptates at minus nisi tenetur aliquam deleniti porro?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet maxime rem harum dolorem nesciunt rerum numquam perferendis labore, id distinctio maiores eum iure eligendi dolorum nostrum? Laboriosam, ducimus. Vero.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio unde rem at porro possimus iusto illum quae architecto magni ab! Aperiam ducimus cupiditate, quaerat soluta ullam provident iste delectus repellendus.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi delectus fuga odio iste doloribus vel quas quis iusto consectetur ullam. Inventore velit sunt, possimus nemo ut aliquid fugiat odit voluptatibus!</p>
+    <br><br>
+    <address>
+        Created by Paa Kwesi<br> 
+        Visit us at:<br>
+        &#128231; paabartels1@gmail.com<br>
+        &#128222; +233 55 406 2406<br>
+        <p>&#127968;
+        Box 564, Kwashieman<br>
+        Accra,Ghana
+        </address>
+  </body>
+</html>

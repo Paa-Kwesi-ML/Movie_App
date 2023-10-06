@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>my movie</title>
+    <link rel="icon" href="{% static '/images/4.png' %}" />
+    <style type="text/css">
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+      .header {
+        height: 80px;
+        background-color: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: normal;
+      }
+      nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 8%;
+}
+/*nav ul{
+    text-align:center;
+}*/
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(227, 239, 239);
+}
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 35px;
+      }
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 250px;
+        height: 420px;
+      }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+      .card img {
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+      }
+      .card h3 {
+        margin: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        text-align: center;
+      }
+      .card p {
+        margin: 10px;
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 5px;
+      }
+      .card button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 0 0 5px 5px;
+      }
+      .card button:hover {
+        background-color: #555;
+      }
+      .video {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+      }
+
+      .video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .video h3 {
+        margin-top: 10px;
+        font-size: 18px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Marvel Movie Dashboard</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home'%}">Back</a></li>
+          <li><a href="{% url 'logins'%}">Log Out</a></li>
+          <li><a href="{% url 'about'%}">About</a></li>
+          <li>{{fname}}</li>
+
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="card">
+        <img src="{% static '/images/sp man.jpg' %}" alt="Movie Poster" />
+        <h3>Spider-man</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button>
+          <nav>
+            <ul><li><a href="{% url 'm1'%}">Watch Here</a></li></ul></nav></button>
+      
+      <!--<video id="mvideo" controls>
+        <source src="{% static '/images/bluelock.mkv'%}" >
+      </video>-->
+    </div>
+      <div class="card">
+        <img src="{% static '/images/Venom1.jpg' %}" alt="Movie Poster" />
+        <h3>Venom</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button><nav>
+          <ul><li><a href="{% url 'm2'%}">Watch Here</a></li></ul></nav></button></button>
+      </div>
+      <div class="card">
+        <img src="{% static '/images/panther 1.jpg' %}" alt="Movie Poster" />
+        <h3>Black Panther</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button><nav>
+          <ul><li><a href="{% url 'm3'%}">Watch Here</a></li></ul></nav></button></button>
+      </div>
+      <div class="card">
+        <img src="{% static '/images/hulk.jpg' %}" alt="Movie Poster" />
+        <h3>The Hulk</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button><nav>
+          <ul><li><a href="{% url 'm4'%}">Watch Here</a></li></ul></nav></button></button>
+      </div>
+      <div class="card">
+        <img src="{% static '/images/cap.jpeg' %}" alt="Movie Poster" />
+        <h3>Captain America</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button><nav>
+          <ul><li><a href="{% url 'm5'%}">Watch Here</a></li></ul></nav></button></button>
+      </div>
+      <div class="card">
+        <img src="{% static '/images/loki.jpg' %}" alt="Movie Poster" />
+        <h3>Loki</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        
+        <button><nav>
+          <ul><li><a href="{% url 'm6'%}">Watch Here</a></li></ul></nav></button></button>
+      </div>
+      <div class="card">
+        <img src="{% static '/images/the thor.jpg' %}" alt="Movie Poster" />
+        <h3>Thor</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button><nav>
+          <ul><li><a href="{% url 'm7'%}">Watch Here</a></li></ul></nav></button></button>
+      </div>
+      <div class="card">
+        <img src="{% static '/images/dr strange1.jpg' %}" alt="Movie Poster" />
+        <h3>Dr. Strange</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button>
+          <nav>
+          <ul>
+            <li>
+              <a href="{% url 'm8'%}">Watch Here</a>
+            </li>
+          </ul>
+          </nav></button></button>
+      </div>
+      <div class="card">
+        <img
+          src="{% static '/images/thanus.jpg' %}"
+          alt="Movie Poster"
+        />
+        <h3>Avengers :End Game</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button>
+           <nav>
+          <ul>
+            <li>
+              <a href="{% url 'm9'%}">Watch Here</a>
+            </li>
+          </ul>
+          </nav></button></button> 
+      </div>
+      <div class="card">
+        <img src="{% static '/images/namor.jpg' %}" alt="Movie Poster" />
+        <h3>Wakanda Forever</h3>
+        <p>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button>
+          <nav>
+          <ul><li><a href="{% url 'm10'%}">Watch Here</a></li></ul></nav></button></button>
+      </div> 
+      
+      
+    </div>
+  </body>
+</html>

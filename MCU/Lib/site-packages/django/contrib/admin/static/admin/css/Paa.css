@@ -1,0 +1,124 @@
+#wrapper{
+   height: 950px;
+   width:1500px;
+   background-image: url("panther 1.jpg"); 
+   background-attachment: fixed;
+}
+#menubar{
+    width: px;
+    height: 65px;
+    background-color: rgb(29, 99, 99);
+}
+nav{
+    display:flex;
+    align-items:center;
+    padding: 10px 8%;
+}
+/*nav ul{
+    text-align:center;
+}*/
+nav ul li{
+    display: inline-block;
+    list-style-type:none;
+    margin:0 20px;
+}
+nav ul li a{
+    text-decoration:none;
+    color:aqua;
+}
+button {
+    border-radius: 6px;
+  }
+
+ 
+#head {
+    width:1500px;
+    height: 100px;
+    background-image: url("marvel\ logo.png");
+}
+
+#leftside{
+    width:180px;
+    height:749px;
+    background-color:grey ;
+    background-image:url("photo_2022-09-01_17-55-39.jpg");
+    background-repeat:no-repeat;
+    float:right
+}
+#content {
+    text-align: center;
+    font-family: 'Chiller';
+    font-size: xx-large;
+    width: 1400px;
+    height: 120px;
+    
+}
+#pages{
+    width: 120px;
+    height:570px;
+    background-color:rgb(239, 226, 213);
+}
+#headab{
+    width:1500px;
+    height: 130px;
+    background-image: url("avengers.jpg");
+}
+#leftsideab{
+    width:180px;
+    height:730px;
+    background-color:grey ;
+    background-image:url("Thor-Odinson-300x282.jpg");
+    background-repeat:no-repeat;
+    float:right
+}
+#wrapperfans{
+    height: 850px;
+    width:1500px;
+    background-image: url("photo_2022-09-01_17-56-58.jpg"); 
+    background-repeat: no-repeat;
+ }
+ #leftsidefan{
+    width:180px;
+    height:730px;
+    background-color:grey ;
+    background-image:url("images.jpg");
+    background-repeat:no-repeat;
+    float:right
+}
+#contentfan {
+    text-align: right;
+    font-family: 'Elephant';
+    font-size: xx-large;
+    width: 1400px;
+    height: 120px;
+    
+}
+#contentab {
+    text-align: center;
+    font-family: 'Andale';
+    font-size: xx-large;
+    width: 1400px;
+    height: 120px;
+    
+}
+#sign {
+    width: 1500px;
+    height: 850px;
+    color: blue;
+    background-image:url('venom1.jpg');
+    animation-name: example;
+    animation-duration:20s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes example {
+    from {background-image: url('Venom1.jpg');}
+    to {background-image: url('the\ studio.jpg');}
+  }
+ #small{
+    width:1500px;
+    height:100px;
+    background-color: crimson;
+    font-family:Verdana, 'Geneva', Tahoma, sans-serif;
+    text-align:center;
+ }

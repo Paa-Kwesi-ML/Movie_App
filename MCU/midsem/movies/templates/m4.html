@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta charset="utf-8" /> -->
+    <title>my movie</title>
+    <link rel="icon" href="{% static '/images/4.png' %}" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+        font-family: sans-serif;
+      }
+      .header {
+        height: 80px;
+        background-color: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: normal;
+      }
+      nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 8%;
+}
+/*nav ul{
+    text-align:center;
+}*/
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(227, 239, 239);
+}
+      #movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .movie-card {
+            position: relative;
+            width: 1200px;
+            height: 750px;
+            margin: 12px;
+            overflow: hidden;
+            display: inline-block;
+            border-radius: 15px;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .movie-card .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+        }
+
+        .movie-card .play-button:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 0 20px 30px;
+            border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+        }
+
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #video-player {
+            width: 70%;
+            height: auto;
+            outline: none;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+        }
+        .rating {
+  display: inline-block;
+  position: relative;
+  height: 150px;
+  width: 300px;
+  margin-bottom: 20px;
+  direction: rtl;
+}
+
+.rating input {
+  position: absolute;
+  left: -999999px;
+}
+
+.rating label {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url("{% static '/images/ofs.png' %}");
+  cursor: pointer;
+}
+
+.rating input:checked + label,
+.rating label:hover ~ label {
+  background:  url("{% static '/images/star.png' %}");
+}
+
+    </style>
+</head>
+  <body>
+    <div class="header">
+      <h1>Marvel Movie Dashboard</h1> 
+      <nav>
+        <ul>
+          <li><a href="{% url 'main'%}">Back</a></li>
+          <li><a href="{% url 'home'%}">Home</a></li>
+          <li><a href="{% url 'logins'%}">Log out</a></li>
+
+        </ul>
+      </nav>
+    </div>
+
+    <div class="movie-card-container">
+      <div class="movie-card">
+        <img src="{% static '/images/hulk.jpg' %}" />
+        <div class="overlay">
+          <div class="play-button"></div>
+        </div>
+        <video src="{% static '/images/marvel video.mkv' %}"></video>
+      </div>
+
+      <h1>DISCRIPITONS</h1>
+      <h2>Hulk :</h2>
+      <p>Released 2018</p>
+      <p>A property of Marverl Studios</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum numquam doloremque fuga quidem ab, consequatur eum. Cumque dolor rem quae sunt iste ratione labore, vitae voluptatum ullam laborum! Placeat, quasi.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem qui rerum. Excepturi vel aut porro facilis deserunt eveniet dicta illum natus? Blanditiis dolorum totam nesciunt officia quae iure illo.
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium aperiam quam in veritatis ut itaque reiciendis ullam, natus dolorem sed minima architecto placeat exercitationem beatae neque atque laboriosam ex ducimus?</p>
+      </p>
+    </div>
+    <h3>Rate this movie</h3>
+     <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5"/>
+      <label for="star5" title="5 stars"></label>
+      <input type="radio" id="star4" name="rating" value="4"/>
+      <label for="star4" title="4 stars"></label>
+      <input type="radio" id="star3" name="rating" value="3"/>
+      <label for="star3" title="3 stars"></label>
+      <input type="radio" id="star2" name="rating" value="2"/>
+      <label for="star2" title="2 stars"></label>
+      <input type="radio" id="star1" name="rating" value="1"/>
+      <label for="star1" title="5 star1"></label>
+    </div> 
+
+    <div id="video-container">
+      <div class="close-button">&times;</div>
+      <video id="video-player" controls autoplay></video>
+    </div> 
+
+    <script>
+      const ratingInputs = document.querySelectorAll('.rating input');
+ratingInputs.forEach(input => input.addEventListener('change', handleRatingChange));
+
+function handleRatingChange(e) {
+  const rating = e.target.value;
+  console.log(`User rated ${rating} stars.`);
+}
+      // Get all the movie cards
+      const movieCards = document.querySelectorAll(".movie-card");
+
+      // Get the video container and the video player
+      const videoContainer = document.getElementById("video-container");
+      const videoPlayer = document.getElementById("video-player");
+
+      // Get the close button
+      const closeButton = document.querySelector(".close-button");
+
+      // Loop through all the movie cards
+      movieCards.forEach((card) => {
+        // Get the overlay and the play button
+        const overlay = card.querySelector(".overlay");
+        const playButton = card.querySelector(".play-button");
+
+        // Get the video element inside the card
+        const video = card.querySelector("video");
+
+        // Add an event listener to the play button
+        playButton.addEventListener("click", () => {
+          // Set the source of the video player to the video inside the card
+          videoPlayer.src = video.src;
+
+          // Show the video container
+          videoContainer.style.display = "flex";
+
+          // Play the video
+          videoPlayer.play();
+        });
+
+        // Add an event listener to the close button
+        closeButton.addEventListener("click", () => {
+          // Pause the video
+          videoPlayer.pause();
+
+          // Hide the video container
+          videoContainer.style.display = "none";
+        });
+      });
+    </script>
+    <!-- <p><strong><a href="{% url 'logins'%}">Log out</a</strong></p> -->
+  </body>
+</html>
+      
+      

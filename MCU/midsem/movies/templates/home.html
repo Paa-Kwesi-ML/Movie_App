@@ -1,0 +1,148 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>marvel</title>
+     <script src="{% static '/js/the logins.js' %}" type="text/javascript">
+     </script>
+    
+    <link rel="icon" href="{% static '/images/4.png' %}" />
+    <!-- <link href ="{% static 'css/Paa.css' %}" rel="stylesheet" /> -->
+    <style>
+      #wrapper {
+        height: 950px;
+        width: 1500px;
+        background-image: url("{% static '/images/panther 1.jpg' %}");
+        background-attachment: fixed;
+      }
+      #menubar {
+        width: px;
+        height: 65px;
+        background-color: rgb(29, 99, 99);
+      }
+      nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 8%;
+}
+/*nav ul{
+    text-align:center;
+}*/
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: aqua;
+}
+button {
+  border-radius: 6px;
+}
+
+#head {
+  width: 1500px;
+  height: 100px;
+  background-image:url("{% static '/images/marvel logo.png' %}");
+}
+
+#leftside {
+  width: 180px;
+  height: 749px;
+  background-color: grey;
+  background-image: url("{% static '/images/photo_2022-09-01_17-55-39.jpg' %}");
+  background-repeat: no-repeat;
+  float: right;
+}
+#content {
+  text-align: center;
+  font-family: "Chiller";
+  font-size: xx-large;
+  width: 1400px;
+  height: 120px;
+}
+#pages {
+  width: 120px;
+  height: 570px;
+  background-color: rgb(239, 226, 213);
+}
+#headab {
+  width: 1500px;
+  height: 130px;
+  background-image: url("avengers.jpg");
+}
+#leftsideab {
+  width: 180px;
+  height: 730px;
+  background-color: grey;
+  background-image: url("Thor-Odinson-300x282.jpg");
+  background-repeat: no-repeat;
+  float: right;
+}
+
+#contentab {
+  text-align: center;
+  font-family: "Andale";
+  font-size: xx-large;
+  width: 1400px;
+  height: 120px;
+}
+
+#small {
+  width: 1500px;
+  height: 100px;
+  background-color: crimson;
+  font-family: Verdana, "Geneva", Tahoma, sans-serif;
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="head"></div>
+      <div id="menubar">
+        <nav>
+          <ul>
+           <li><a href="{% url 'main'%}">Movies</a><br></li>
+           <li><a href="{% url 'logins'%}">Log Out</a></li>
+           <li><a href="{% url 'about'%}">About</a><br> </li>
+          </ul>       
+         
+        </nav>
+      </div>
+      <div id="leftside">
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br />
+        <b>For enquaries</b> <br>
+         <a href="paabartels1@gmail.com">E-mail</a><br>
+         Contact: +233 554 06 2406 <br />
+         Follow us on Telegram:Does your boyfriend make you smile 
+         
+
+      </div>
+      <div id="content">
+        <h1 style="color:brown"> WELCOME TO MCU</h1>
+      </div>
+      <div id="pages">
+          <p>With with respect to the King Of Wakanda<br>
+          WAKANDA FOREVER &#129332</p>
+          <p>Over here you can see our blogs and info by clicking on the links above</p>
+          
+      </div>   
+      <div id="small">
+        Marvel has a whole lot of varietes of movies as well as comics<br>
+        Marevl have super heroes also divided into groups<br>
+        We have the X-MEN,AVENGERS those are so far the hyped ones
+      </div>
+      
+      
+    </div>
+    </div>
+
+  </body>
+</html>
